@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <title>ToDo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/task.css">
+</head>
+
+<nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">ToDo</a>
+    <a class="btn btn-success" href="/logout"> Log Out </a>
+</nav>
+
+<body>
+    <div class="container">
+        <div class="addTask">
+            <input type="text" placeholder="What will you do today?">
+            <button onclick="add()" type="submit" class="add-button">Add</button>
+        </div>
+
+        <div class="container">
+        <ol class="Pending">
+            <h3>Pending</h3>
+            <li>Run your day, don’t let it run you.
+                <form>
+                <input class="checkbox" type="checkbox">
+                <button><i class="far fa-trash-alt"></i></button>
+                <button><i class="far fa-edit"></i></button>
+            </form>
+            </li>
+            <li>Choose a workflow, or make your own.
+                <form>
+                <input class="checkbox" type="checkbox">
+                <button><i class="far fa-trash-alt"></i></button>
+                <button><i class="far fa-edit"></i></button>
+            </form>
+            </li>
+            <li>Integrate with the tools you already use.
+                <form>
+                <input class="checkbox" type="checkbox">
+                <button><i class="far fa-trash-alt"></i></button>
+                <button><i class="far fa-edit"></i></button>
+            </form>
+            </li>
+            <li>Connect your team's work to your product roadmap.
+                <form>
+                <input class="checkbox" type="checkbox">
+                <button><i class="far fa-trash-alt"></i></button>
+                <button><i class="far fa-edit"></i></button>
+            </form>
+            </li>
+            <li>Streamline your work with automation.
+                <form>
+                <input class="checkbox" type="checkbox">
+                <button><i class="far fa-trash-alt"></i></button>
+                <button><i class="far fa-edit"></i></button>
+            </form>
+            </li>
+        </ol>
+        </div>
+
+        <div class="container">
+        <ol class="Completed">
+            <h3>Completed</h3>
+            <li>Connect your team's work to your product roadmap.
+                <form>
+                <input class="checkbox" type="checkbox">
+                <button><i class="far fa-trash-alt"></i></button>
+                <button><i class="far fa-edit"></i></button>
+            </form>
+            </li>
+            <li>Choose a workflow, or make your own.
+                <form>
+                <input class="checkbox" type="checkbox">
+                <button><i class="far fa-trash-alt"></i></button>
+                <button><i class="far fa-edit"></i></button>
+            </form>
+            </li>
+            <li>Run your day, don’t let it run you.
+                <form>
+                <input class="checkbox" type="checkbox">
+                <button><i class="far fa-trash-alt"></i></button>
+                <button><i class="far fa-edit"></i></button>
+            </form>
+            </li>
+            <li>Streamline your work with automation.
+                <form>
+                <input class="checkbox" type="checkbox">
+                <button><i class="far fa-trash-alt"></i></button>
+                <button><i class="far fa-edit"></i></button>
+            </form>
+            </li>
+            <li>Integrate with the tools you already use.
+                <form>
+                <input class="checkbox" type="checkbox">
+                <button><i class="far fa-trash-alt"></i></button>
+                <button><i class="far fa-edit"></i></button>
+            </form>
+            </li>
+        </ol>
+        </div>
+
+    </div>
+</body>
+
+</html>
