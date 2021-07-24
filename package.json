@@ -1,0 +1,23 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avi-lucky/ToDo.git"
+  },
+  "author": "Avikal Shukla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/avi-lucky/ToDo/issues"
+  },
+  "homepage": "https://github.com/avi-lucky/ToDo#readme",
+  "dependencies": {
+    "mongoose": "^5.13.3",
+    "nodemon": "^2.0.12"
+  }
+}
