@@ -13,14 +13,14 @@ router.post('/tasks', auth, async (req, res) => {
         // ...req.body,
         description: req.body.description,
         completed: req.body.completed,
-        owner: req.user.email
+        owner: req.user._id
     })
-    console.log(res.user)
-    console.log(req.body)
-    console.log(req.body.description)
-    console.log(typeof res.body)
-    console.log(res.body)
-    console.log(req.user.email)
+    // console.log(res.user)
+    // console.log(req.body)
+    // console.log(req.body.description)
+    // console.log(typeof res.body)
+    // console.log(res.body)
+    // console.log(req.user.email)
     try {
         await task.save()
         res.status(201).send(task)
@@ -32,7 +32,7 @@ router.post('/tasks', auth, async (req, res) => {
 // read all tasks
 router.get('/tasks', auth, async (req, res) => {
     try {
-        const task = await Task.find({ owner: req.user.email })
+        const task = await Task.find({ owner: req.user._id })
         res.send(task)
     } catch (e) {
         res.status(500).send(e)
@@ -44,7 +44,7 @@ router.get('/tasks/:id', auth, async (req, res) => {
     const _id = req.params.id
 
     try {
-        const task = await Task.findOne({ _id, owner: req.user.email })
+        const task = await Task.findOne({ _id, owner: req.user._id })
 
         if (!task) {
             return res.status(404).send()
@@ -66,17 +66,19 @@ router.patch('/tasks/:id', auth, async (req, res) => {
     }
 
     try {
-        const task = await Task.findById(req.params.id)
-        if(task.owner == req.user.email){
-            updates.forEach((update) => task[update] = req.body[update])
-            await task.save()
-        }
-        else if(task.owner != req.user.email){
-            return res.status(400).send(e)
-        }
+        const task = await Task.findOne({ _id: req.params.id, owner: req.user._id})
+        // if(task.owner == req.user.email){
+        //     updates.forEach((update) => task[update] = req.body[update])
+        //     await task.save()
+        // }
+        // else if(task.owner != req.user.email){
+        //     return res.status(400).send(e)
+        // }
         if (!task) {
             return res.status(404).send()
         }
+        updates.forEach((update) => task[update] = req.body[update])
+        await task.save()
         res.send(task)
     } catch (e) {
         res.status(400).send(e)
@@ -86,7 +88,7 @@ router.patch('/tasks/:id', auth, async (req, res) => {
 // delete task
 router.delete('/tasks/:id/delete', auth, async (req, res) => {
     try {
-        const task = await Task.findOneAndDelete({ _id: req.params.id, owner: req.user.email })
+        const task = await Task.findOneAndDelete({ _id: req.params.id, owner: req.user._id })
 
         if (!task) {
             return res.status(404).send()

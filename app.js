@@ -17,10 +17,10 @@ const User = require('./src/models/user')
 var token = jwt.sign({ _id:  '60fef303d374ae36da173c39' }, 'thisismynewproject', {
     expiresIn: '3 seconds'
   });
-  console.log(token)
+//   console.log(token)
 
 jwt.verify(token, 'thisismynewproject', function(err, token) {
-    console.log(token)
+    // console.log(token)
   })
 
 app.listen(3000, () => console.log("Server Up and Running!"));
