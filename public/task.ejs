@@ -6,7 +6,7 @@
     <meta content="utf-8" http-equiv="encoding">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link rel="stylesheet" type="text/html" href="../public/css/task.css">
+    <!-- <link rel="stylesheet" type="text/html" href="../public/css/task.css"> -->
 </head>
 <style>
     *{
@@ -104,12 +104,13 @@ li form{
 li button{
     width: 30px;
     height: 30px;
+    float: right;
 }
 </style>
 
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="/">ToDo</a>
-    <button onclick="logOut()" action="logOut" class="btn btn-success" type="submit" form="nameform" value="Submit" href="/logout"> Log Out </button>
+    <button onclick="logOut()" action="logOut" class="btn btn-success" type="submit" form="nameform" value="Submit"> Log Out </button>
 </nav>
 
 <body>
@@ -122,86 +123,38 @@ li button{
         <div class="container">
         <ol class="Pending">
             <h3>Pending</h3>
-            <li>Run your day, don’t let it run you.
+            <!-- <li>
                 <form>
-                <input class="checkbox" type="checkbox">
-                <button><i class="far fa-trash-alt"></i></button>
-                <button><i class="far fa-edit"></i></button>
+                    <input class="checkbox" type="checkbox">
             </form>
-            </li>
-            <li>Choose a workflow, or make your own.
-                <form>
-                <input class="checkbox" type="checkbox">
-                <button><i class="far fa-trash-alt"></i></button>
-                <button><i class="far fa-edit"></i></button>
-            </form>
-            </li>
-            <li>Integrate with the tools you already use.
-                <form>
-                <input class="checkbox" type="checkbox">
-                <button><i class="far fa-trash-alt"></i></button>
-                <button><i class="far fa-edit"></i></button>
-            </form>
-            </li>
-            <li>Connect your team's work to your product roadmap.
-                <form>
-                <input class="checkbox" type="checkbox">
-                <button><i class="far fa-trash-alt"></i></button>
-                <button><i class="far fa-edit"></i></button>
-            </form>
-            </li>
-            <li>Streamline your work with automation.
-                <form>
-                <input class="checkbox" type="checkbox">
-                <button><i class="far fa-trash-alt"></i></button>
-                <button><i class="far fa-edit"></i></button>
-            </form>
-            </li>
+            </li> -->
         </ol>
         </div>
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Some text in the Modal..</p>
+            </div>
+          
+          </div>
+
 
         <div class="container">
         <ol class="Completed">
             <h3>Completed</h3>
-            <li>Connect your team's work to your product roadmap.
+            <!-- <li>
                 <form>
-                <input class="checkbox" type="checkbox">
-                <button><i class="far fa-trash-alt"></i></button>
-                <button><i class="far fa-edit"></i></button>
             </form>
-            </li>
-            <li>Choose a workflow, or make your own.
-                <form>
-                <input class="checkbox" type="checkbox">
-                <button><i class="far fa-trash-alt"></i></button>
-                <button><i class="far fa-edit"></i></button>
-            </form>
-            </li>
-            <li>Run your day, don’t let it run you.
-                <form>
-                <input class="checkbox" type="checkbox">
-                <button><i class="far fa-trash-alt"></i></button>
-                <button><i class="far fa-edit"></i></button>
-            </form>
-            </li>
-            <li>Streamline your work with automation.
-                <form>
-                <input class="checkbox" type="checkbox">
-                <button><i class="far fa-trash-alt"></i></button>
-                <button><i class="far fa-edit"></i></button>
-            </form>
-            </li>
-            <li>Integrate with the tools you already use.
-                <form>
-                <input class="checkbox" type="checkbox">
-                <button><i class="far fa-trash-alt"></i></button>
-                <button><i class="far fa-edit"></i></button>
-            </form>
-            </li>
+        </li> -->
         </ol>
         </div>
 
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./task.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 # ToDo App
 
-Nodejs, HTML, CSS, MongoDB App, Javascript
+Nodejs, HTML, EJS, MongoDB App, Javascript
 
 For Testing "JEST" has been used.

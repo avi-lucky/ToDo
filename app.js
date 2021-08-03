@@ -14,6 +14,10 @@ app.get('/', function (req, res, next) {
   // console.log('Successfully User Created!')
 })
 
+app.get('/task.ejs', function (req, res, next) {
+  res.render('/home/celticlab/Desktop/ToDo App/public/task.ejs')
+})
+
 app.use(express.static(publicDirectoryPath))
 
 
