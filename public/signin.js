@@ -20,3 +20,21 @@ function logIn() {
   })
 }
 
+// // Forgot Password
+// function forgotPassword() {
+//   const forgotpassword = document.getElementById("forgotpassword").value
+//   console.log(forgotpassword)
+//   axios.patch("/users/forgot", {
+//     password: password
+//   },{
+//     headers: {
+//       Authorization : ('Bearer ', localStorage.getItem("token"))
+//     }})
+//   .then(function (response) {
+//     console.log(response);
+//     console.log(response.data)
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
+// }

@@ -2,8 +2,8 @@
 function signUp() {
     const name = document.getElementById("name").value  
     const email = document.getElementById("email").value  
-	const password = document.getElementById("password").value
-	const confirmPassword = document.getElementById("confirmPassword").value 
+	  const password = document.getElementById("password").value
+	  const confirmPassword = document.getElementById("confirmPassword").value 
   axios.post("/users", {
      name: name,
      email: email,

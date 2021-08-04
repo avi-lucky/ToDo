@@ -251,5 +251,3 @@ function logOut() {
       console.log(localStorage.getItem("token"))
     })
   }
-  
-
