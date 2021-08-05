@@ -66,29 +66,29 @@ router.post('/users/logout', auth, async (req, res) => {
 })
 
 // forgot password
-router.patch('/users/forgot', auth, async (req, res) => {
+router.patch('/users/forgot', async (req, res) => {
     const updates = Object.keys(req.body)
     const allowedUpdates = ['password']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
 
-    if (!isValidOperation) {
-        return res.status(400).send({ error: 'Invalid updates!' })
-    }
-    // try {
-    //     updates.forEach((update) => req.user[update] = req.body[update])
-    //     await req.user.save()
-    //     res.send(req.user)
-    // } catch (e) {
-    //     res.status(400).send(e)
+    // if (!isValidOperation) {
+    //     return res.status(400).send({ error: 'Invalid updates!' })
     // }
+    const { email } = req.body
+    const user = await User.findOne({ email })
+    console.log(req.body.email)
+    console.log(req.body)
+    console.log(email)
     try {
-        updates.forEach((update) => req.user[update] = req.body[update])
-        // const user = await User.findByCredentials(req.body.email)
+        // req.password 
+        // updates.forEach((update) => req.user[update] = req.body[update])
         await req.user.save()
         res.send(req.user)
-    } catch (e) {
-        res.status(400).send(e)
-    }
+        if (!user)
+        return res.status(400).send("User With Given Email Doesn't Exist!")
+     } catch (e) {
+            res.status(500).send("Error")
+        }
 })
 
 module.exports = router

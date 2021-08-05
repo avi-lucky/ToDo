@@ -9,7 +9,7 @@
 
 <nav class="navbar navbar-dark bg-dark">
     <a class="navbar-brand" href="/">ToDo</a> 
-    <button onclick="signUp()"  href="localhost:3000./signup.ejs" action="signUp" class="btn btn-success" type="submit" form="nameform" value="Submit"> Sign Up </button>
+    <button onclick="signUp()" action="signUp" class="btn btn-success" type="submit" form="nameform" value="Submit"> Sign Up </button>
 </nav>
 
 <body>
@@ -41,7 +41,10 @@
         
         <script>
             function forgotPassword() {
-                window.location.replace("file:///localhost:3000/forgot.ejs")
+                location.replace("http://localhost:3000/forgot")
+            }
+            function signUp() {
+                location.replace("http://localhost:3000/signup")
             }
         </script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

@@ -7,15 +7,24 @@ const http = require('http')
 
 const app = express();
 
-const publicDirectoryPath = path.join(__dirname, '/public')
+const publicDirectoryPath = path.join(__dirname, '/public/')
 
 app.get('/', function (req, res, next) {
-  res.render('/home/celticlab/Desktop/ToDo App/public/signin.ejs')
+  // console.log(publicDirectoryPath)
+  res.render(`${publicDirectoryPath}signin.ejs`)
   // console.log('Successfully User Created!')
 })
 
-app.get('/task.ejs', function (req, res, next) {
-  res.render('/home/celticlab/Desktop/ToDo App/public/task.ejs')
+app.get('/task', function (req, res, next) {
+  res.render(`${publicDirectoryPath}task.ejs`)
+})
+
+app.get('/forgot', function (req, res, next) {
+  res.render(`${publicDirectoryPath}forgot.ejs`)
+})
+
+app.get('/signup', function (req, res, next) {
+  res.render(`${publicDirectoryPath}signup.ejs`)
 })
 
 app.use(express.static(publicDirectoryPath))

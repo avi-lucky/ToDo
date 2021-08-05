@@ -13,28 +13,29 @@ function logIn() {
     // res.send( user, response.data.token )
     console.log(response);
     console.log(response.data.token)
-    location.replace('./task.ejs')
+    location.replace('http://localhost:3000/task')
   })
   .catch(function (error) {
     console.log(error);
   })
 }
 
-// // Forgot Password
-// function forgotPassword() {
-//   const forgotpassword = document.getElementById("forgotpassword").value
-//   console.log(forgotpassword)
-//   axios.patch("/users/forgot", {
-//     password: password
-//   },{
-//     headers: {
-//       Authorization : ('Bearer ', localStorage.getItem("token"))
-//     }})
-//   .then(function (response) {
-//     console.log(response);
-//     console.log(response.data)
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   });
-// }
+// Forgot Password
+function submit() {
+  const email = document.getElementById("email").value
+  const newPassword = document.getElementById("newPassword").value
+  const confirmPassword = document.getElementById("confirmPassword").value
+  axios.patch("/users/forgot",{
+    email: email,
+    newPassword: newPassword,
+    confirmPassword: confirmPassword
+  })
+  .then(function (response) {
+    console.log(response)
+    console.log(response.data)
+    location.replace('/')
+  })
+  .catch(function (error) {
+    console.log(error)
+  })
+}
