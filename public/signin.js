@@ -25,10 +25,14 @@ function submit() {
   const email = document.getElementById("email").value
   const newPassword = document.getElementById("newPassword").value
   const confirmPassword = document.getElementById("confirmPassword").value
-  axios.patch("/users/forgot",{
+  console.log(email)
+  console.log(newPassword)
+  console.log(confirmPassword)
+  axios.patch("/users/forgot", {
     email: email,
-    newPassword: newPassword,
-    confirmPassword: confirmPassword
+    password: newPassword
+    // newPassword: newPassword,
+    // confirmPassword: confirmPassword
   })
   .then(function (response) {
     console.log(response)
