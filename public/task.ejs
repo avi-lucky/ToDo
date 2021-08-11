@@ -51,7 +51,7 @@ body{
     border-radius: 5px;
     cursor: pointer;
 }
-.notCompleted .Completed{
+.Pending .Completed{
     margin: 5px 0;
     padding: 20px;
 }
@@ -116,7 +116,7 @@ li button{
 <body>
     <div class="container">
         <div class="addTask">
-            <input type="text" placeholder="What will you do today?">
+            <input type="text" id="description" placeholder="What will you do today?">
             <button onclick="addToDo()" action="addToDo" class="add-button" type="submit" form="nameform" value="Submit">Add</button>
         </div>
 
@@ -142,6 +142,9 @@ li button{
         </div>
 
     </div>
+
+    <!-- <table id=list></table> -->
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="./task.js"></script>
 </body>
