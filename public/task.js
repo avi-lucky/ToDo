@@ -17,14 +17,14 @@ axios.get('/tasks', {
     if(response.data[i].completed == false)
     {
       var task = response.data[i].description
-      var task = response.data[i].completed
+      // var pending = response.data[i].completed == false
       console.log(typeof (task))
       console.log(task)
     id = response.data[i]._id
     console.log(id)
     list_pending += `<li id="${id}">${response.data[i].description}`
     list_pending += `<form>
-                  <button updateToDo("${id}")><input type="checkbox"></button>
+                  <button onclick=updateStatus("${id}",${true})><input type="checkbox"></button>
                   <button onclick=deleteToDo("${id}") action="none" type="submit" value="Delete"><i class="far fa-trash-alt"></i></button>
                   <button onclick=modal(${i},"${id}","${task}") type="button" id="${i}" class="fa fa-edit"/>
             </form></li>`
@@ -35,11 +35,12 @@ axios.get('/tasks', {
     if(response.data[i].completed == true)
     {
       var task = response.data[i].description
+      // var completed = response.data[i].completed == true
       id = response.data[i]._id
       console.log(id)
       list_completed += `<li id="${id}">${response.data[i].description}`
       list_completed += `<form>
-                  <button><i class="fa fa-check"></i></button>
+                  <button onclick=updateStatus("${id}",${false})><input checked="checked" type="checkbox"></button>
                   <button onclick=deleteToDo("${id}") action="none" type="submit" value="Delete"><i class="far fa-trash-alt"></i></button>
                   <button onclick=modal(${i},"${id}","${task}") type="button" id="${i}" class="fa fa-edit"/>
             </form></li>`
@@ -48,7 +49,6 @@ axios.get('/tasks', {
   document.getElementById('pending').innerHTML = list_pending
   document.getElementById('completed').innerHTML = list_completed
   let form = document.getElementById('updateToDo');
-
 })
 .catch(function (error) {
   if (error.response) 
@@ -64,7 +64,6 @@ function modal(i, id, task) {
   var btn = document.getElementById(i);
   document.getElementById('moddal_value').value = task
   document.getElementById('modals').setAttribute('onclick',`updateToDo("${id}")`)
-
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -85,6 +84,23 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+}
+
+function updateStatus(id, status) {
+  axios.patch("/tasks/"+ id + "", {
+    completed: status
+},{
+headers: {
+  Authorization : ('Bearer ', localStorage.getItem("token"))
+}})
+.then(function (response) {
+  console.log(response);
+  console.log(response.data)
+  location.reload()
+})
+.catch(function (error) {
+  console.log(error);
+});
 }
 
 // add task
@@ -111,12 +127,9 @@ function addToDo() {
  // update task
  function updateToDo(id) {
   const description = document.getElementById("moddal_value").value
-  const completed = false
   console.log(description)
-  console.log(completed)
   axios.patch("/tasks/"+ id + "", {
-      description: description,
-      completed: completed
+      description: description
   },{
   headers: {
     Authorization : ('Bearer ', localStorage.getItem("token"))
