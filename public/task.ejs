@@ -37,20 +37,23 @@
             </ol>
         </div>
 
-        <!-- Trigger/Open The Modal
-        <button onclick=updateToDo() id="myBtn" action="none" type="submit" value="Update"><i class="fa fa-edit"></i></button>
+    </div>
 
-        The Modal
-        <div id="myModal" class="modal">
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
 
-        Modal content
-            <div class="modal-content">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
                 <span class="close">&times;</span>
-                <p>Description</p>
+                <h2>Update Task</h2>
             </div>
-
-        </div> -->
-
+            <div class="modal-body">
+                <input type="text" id="moddal_value">
+                <button id="modals" action="updateToDo" type="button" value="Submit"
+                    form="nameform">Update</button>
+            </div>
+        </div>
     </div>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

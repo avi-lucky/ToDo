@@ -8,37 +8,40 @@
 </head>
 
 <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">ToDo</a> 
-    <button onclick="signUp()" action="signUp" class="btn btn-success" type="submit" form="nameform" value="Submit"> Sign Up </button>
+    <a class="navbar-brand" href="/">ToDo</a>
+    <button onclick="signUp()" action="signUp" class="btn btn-success" type="submit" form="nameform" value="Submit">
+        Sign Up </button>
 </nav>
 
 <body>
     <div class="container">
         <div id="wrapper">
-                    <div class="card text-center">
-                        <h5 class="card-header">LogIn</h5>
-                        <div class="card-body">
-                            <!-- <img src="images/default.jpeg" height="134" width="134"><br><br> -->
-                            <form action="/login" method="post">
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i
-                                                class="fas fa-user"></i></span></div>
-                                    <input class="form-control" name="email" type="email" placeholder="Email" id="email"
-                                        required maxlength="30">
-                                </div><br>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i
-                                                class="fas fa-lock"></i></span></div>
-                                    <input class="form-control" name="password" type="password" placeholder="Password" id="password"
-                                        required maxlength="30">
-                                </div><br>
-                                <button onclick="logIn()" action="logIn" class="btn btn-primary" type="submit" form="nameform" value="Submit" style="width:100%;">LogIn</button>
-                            </form>
-                            <button onclick="forgotPassword()" action="forgotPassword" class="btn btn-primary" type="submit" form="nameform" value="Submit" style="width:100%;">Forgot Password</button>
-                        </div>
-                    </div><br>
+            <div class="card text-center">
+                <h5 class="card-header">LogIn</h5>
+                <div class="card-body">
+                    <!-- <img src="images/default.jpeg" height="134" width="134"><br><br> -->
+                    <form action="/login" method="post">
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i
+                                        class="fas fa-user"></i></span></div>
+                            <input class="form-control" name="email" type="email" placeholder="Email" id="email"
+                                required maxlength="30">
+                        </div><br>
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text" id="basic-addon1"><i
+                                        class="fas fa-lock"></i></span></div>
+                            <input class="form-control" name="password" type="password" placeholder="Password"
+                                id="password" required maxlength="30">
+                        </div><br>
+                        <button onclick="logIn()" action="logIn" class="btn btn-primary" type="submit" form="nameform"
+                            value="Submit" style="width:100%;">LogIn</button>
+                    </form>
+                    <button onclick="forgotPassword()" action="forgotPassword" class="btn btn-primary" type="submit"
+                        form="nameform" value="Submit" style="width:100%;">Forgot Password</button>
+                </div>
+            </div><br>
         </div>
-        
+
         <script>
             function forgotPassword() {
                 location.replace("http://localhost:3000/forgot")
@@ -48,7 +51,7 @@
             }
         </script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-         <script src="./signin.js"></script>
+        <script src="./signin.js"></script>
 
 </body>
 
