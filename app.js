@@ -6,6 +6,7 @@ const path = require('path')
 const http = require('http')
 
 const app = express();
+const port = process.env.PORT || 3000
 
 const publicDirectoryPath = path.join(__dirname, '/public/')
 
@@ -47,6 +48,6 @@ jwt.verify(token, 'thisismynewproject', function(err, token) {
     // console.log(token)
   })
 
-app.listen(3000, () => console.log("Server Up and Running!"));
+app.listen(port, () => console.log("Server Up and Running!" + port));
 
 module.exports = app

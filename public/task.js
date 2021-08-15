@@ -17,11 +17,8 @@ axios.get('/tasks', {
     if(response.data[i].completed == false)
     {
       var task = response.data[i].description
-      // var pending = response.data[i].completed == false
-      console.log(typeof (task))
-      console.log(task)
     id = response.data[i]._id
-    console.log(id)
+    // console.log(id)
     list_pending += `<li id="${id}">${response.data[i].description}`
     list_pending += `<form>
                   <button onclick=updateStatus("${id}",${true})><input type="checkbox"></button>
@@ -35,9 +32,8 @@ axios.get('/tasks', {
     if(response.data[i].completed == true)
     {
       var task = response.data[i].description
-      // var completed = response.data[i].completed == true
       id = response.data[i]._id
-      console.log(id)
+      // console.log(id)
       list_completed += `<li id="${id}">${response.data[i].description}`
       list_completed += `<form>
                   <button onclick=updateStatus("${id}",${false})><input checked="checked" type="checkbox"></button>
@@ -59,7 +55,7 @@ axios.get('/tasks', {
 });
 
 function modal(i, id, task) {
-  console.log(task)
+  // console.log(task)
   var modal = document.getElementById("myModal");
   var btn = document.getElementById(i);
   document.getElementById('moddal_value').value = task
